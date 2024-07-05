@@ -52,7 +52,10 @@ def main():
         except ValueError:
             print("Please enter a valid number.")
     
-    html_file = input("Enter the name of the output HTML file (without extension): ") + ".html"
+    html_file = input("Enter the name of the output HTML file (without extension, leave blank to use PDF name): ").strip()
+    if not html_file:
+        html_file = os.path.splitext(pdf_file)[0]
+    html_file += ".html"
     
     print(f"Converting '{pdf_file}' to '{html_file}'...")
     print("This process might take some time for large PDF files.")

@@ -77,7 +77,10 @@ def main():
         except ValueError:
             print("Please enter a valid number.")
     
-    output_base_name = input("Enter the base name for the output files (without extension): ")
+    output_base_name = input("Enter the base name for the output files (without extension, leave blank to use PDF name): ").strip()
+    if not output_base_name:
+        output_base_name = os.path.splitext(input_pdf)[0]
+    
     output_folder = input("Enter the name of the output folder (it will be created if it does not exist): ")
     
     print(f"Splitting '{input_pdf}'...")

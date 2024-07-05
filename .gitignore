@@ -1,0 +1,11 @@
+# Data files
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.txt
+*.pdf
+
+# Folders
+/input
+/output
